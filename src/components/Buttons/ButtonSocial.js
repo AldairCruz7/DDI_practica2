@@ -7,11 +7,11 @@ export default function ButtonSocial(props) {
     let imageSource;
 
     if(imageType === 'facebook'){
-        imageSource = require('../../assets/images/facebook.png');
+        imageSource = require('../../assets/facebook.png');
     }else if(imageType === 'google'){
-        imageSource = require('../../assets/images/google.png');
+        imageSource = require('../../assets/google.png');
     }else{
-        imageSource = require('../../assets/images/twitter.png');
+        imageSource = require('../../assets/twitter.png');
     }
 
 
@@ -28,7 +28,7 @@ export default function ButtonSocial(props) {
   )
 }
 
-const styles = StyleSheet.create({
+StyleSheet.create({
     contentButton:{
         flexDirection: 'row',
         alignItems: 'center',
@@ -38,5 +38,5 @@ const styles = StyleSheet.create({
         height: 50,
         padding: 15,
         marginVertical: 10,
-    }})
+}})
     

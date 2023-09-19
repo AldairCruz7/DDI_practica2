@@ -4,9 +4,11 @@ import HomeScreen from '../../../screen/HomeScreen';
 import SettingsScreen from '../../../screen/SettingsScreen';
 import FavoritesScreen from '../../../screen/FavoritesScreen';
 import AccountScreen from '../../../screen/AccountScreen';
+
 import { View } from 'react-native'
 import AwesomeIcon from 'react-native-vector-icons/FontAwesome'
 import { styles } from './TabNavigation.styles';
+import AuthScreen from '../../../screen/Auth/AuthScreen';
 
 
 const TabNavigations = () => {
@@ -38,6 +40,7 @@ const TabNavigations = () => {
         component={AccountScreen}
         options={{title: 'Cuenta'}}
     />
+
     </Tab.Navigator>
 
     
@@ -69,6 +72,7 @@ const setIcon = (route, routeStatus) => {
     if (route.name === 'Account') {
       iconName = 'user';
     }
+  
     return <AwesomeIcon name={iconName} color={color} style={styles.icon}/>
 }
 

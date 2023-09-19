@@ -3,7 +3,7 @@ import AppNavigation from './AppNavigation'
 import AuthScreen from '../../screen/Auth/AuthScreen'
 
 const RootNavigation = () => {
-  const user = null;
+  const user = 1;
   return user ? <AppNavigation /> : <AuthScreen />
 }
 

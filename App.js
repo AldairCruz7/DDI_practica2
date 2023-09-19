@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import RootNavigation from './src/components/navigation/RootNavigation';
 import { useFonts, Montserrat_300Light, Montserrat_700Bold, Montserrat_400Regular } from '@expo-google-fonts/montserrat'; 
+import { PaperProvider } from 'react-native-paper';
 
 export default function App() {
   
@@ -15,7 +16,9 @@ export default function App() {
   }
 
   return (
-    <RootNavigation />
+    <PaperProvider>
+       <RootNavigation />
+    </PaperProvider>
   );
 }
 
