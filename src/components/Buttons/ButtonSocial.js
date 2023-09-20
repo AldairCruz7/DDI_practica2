@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import React from 'react'
-import { styles } from '../navigation/TabNavigation/TabNavigation.styles';
+
 
 export default function ButtonSocial(props) {
     const {title, imageType, color} = props;
@@ -19,16 +19,16 @@ export default function ButtonSocial(props) {
         backgroundColor : color,
     }
   return (
-        <TouchableOpacity style={[styles.contentButton, buttonStyle]}>
+        <TouchableOpacity style={[Styles.contentButton, buttonStyle]}>
             <View>
-                <Image source={imageSource} style={styles.image}></Image>
+                <Image source={imageSource} style={Styles.image}></Image>
             </View>
-            <Text style={styles.text}>{title}</Text>
+            <Text style={Styles.text}>{title}</Text>
         </TouchableOpacity>
   )
 }
 
-StyleSheet.create({
+const Styles =StyleSheet.create({
     contentButton:{
         flexDirection: 'row',
         alignItems: 'center',
