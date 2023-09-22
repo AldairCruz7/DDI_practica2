@@ -2,7 +2,17 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import RootNavigation from './src/components/navigation/RootNavigation';
 import { useFonts, Montserrat_300Light, Montserrat_700Bold, Montserrat_400Regular } from '@expo-google-fonts/montserrat'; 
-import { PaperProvider } from 'react-native-paper';
+import { MD3LightTheme as DefaultTheme, PaperProvider } from 'react-native-paper';
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'tomato',
+    secondary: 'yellow',
+  },
+};
+
 
 export default function App() {
   
@@ -16,7 +26,7 @@ export default function App() {
   }
 
   return (
-    <PaperProvider>
+    <PaperProvider theme={theme}>
        <RootNavigation />
     </PaperProvider>
   );

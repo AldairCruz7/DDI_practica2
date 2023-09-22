@@ -1,5 +1,6 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import React from 'react'
+import Fonts from '../../constants/Fonts';
 
 
 export default function ButtonSocial(props) {
@@ -19,24 +20,33 @@ export default function ButtonSocial(props) {
         backgroundColor : color,
     }
   return (
-        <TouchableOpacity style={[Styles.contentButton, buttonStyle]}>
+        <TouchableOpacity style={[styles.contentButton, buttonStyle]}>
             <View>
-                <Image source={imageSource} style={Styles.image}></Image>
+                <Image source={imageSource} style={styles.image}></Image>
             </View>
-            <Text style={Styles.text}>{title}</Text>
+            <Text style={styles.text}>{title}</Text>
         </TouchableOpacity>
   )
 }
 
-const Styles =StyleSheet.create({
-    contentButton:{
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
+const styles = StyleSheet.create({
+    contentButton: {
+        flexDirection: "row",
+        alignItems: "center",
+        // justifyContent: "center",
+        // width: "100%",
         borderRadius: 30,
-        height: 50,
+        height: 55,
         padding: 15,
         marginVertical: 10,
-}})
-    
+    },
+    image: {
+        marginLeft: 15
+    },
+    title: {
+        paddingLeft: 30,
+        color: "#FFF",
+        fontFamily: Fonts.family.regular,
+        fontSize: Fonts.size.medium,
+    }
+});

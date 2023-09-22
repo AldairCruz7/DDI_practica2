@@ -6,9 +6,9 @@ const AccountScreen = () => {
   return (
     <View style={styles.container}>
         <View style={styles.header}>
-        <Avatar.Icon size={24} icon="folder" />
+        {/* <Avatar.Icon size={24} icon="folder" /> */}
         <Text> Daniel</Text>
-        <Avatar.Image size={200} source={require('../assets/Eldani.jpeg')} />
+        <Avatar.Image size={60} source={require('../assets/Eldani.jpeg')} />
         </View>
         <ScrollView>
             <View  style={styles.MainContainer}></View>
