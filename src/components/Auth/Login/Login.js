@@ -51,8 +51,9 @@ export default function Login(props) {
             value={formik.values.password}
             error={formik.errors.password}
         />
+        <Button mode="text"      style={globalStyles.form.buttonText} onPress={formik.handleSubmit}loading={formik.isSubmitting}> Iniciar sesión </Button>
         <Button mode="contained" style={globalStyles.form.buttonSubmit} onPress={cambioAuth} > Crear cuenta </Button>
-        <Button mode="text"      style={globalStyles.form.buttonText}> Iniciar sesión </Button>
+        
     </View>
   )
 }

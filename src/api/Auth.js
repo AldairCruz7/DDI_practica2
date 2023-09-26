@@ -19,10 +19,7 @@ async function registerUser(email, username, password){
     throw error
   }
 }
-
-
-
-async function login(identifier, password){
+async function Login(identifier, password){
   try{
     const url = `${ENV.API_URL}/${ENV.ENDPOINTS.LOGIN}`;
     const params = {
@@ -32,10 +29,10 @@ async function login(identifier, password){
       },
       body: JSON.stringify({identifier,password})
     }
+    console.log("soy params",params.body)
     const response = await fetch(url, params);
-    
     if (response.status !== 200) throw response;
-    return response.json();
+    return await response.json();
   }
   catch(error){
     throw error
@@ -44,5 +41,5 @@ async function login(identifier, password){
 
 
 export const authApi={
-  registerUser, login
+  registerUser,Login
 }

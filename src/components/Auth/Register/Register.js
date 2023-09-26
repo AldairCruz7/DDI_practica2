@@ -77,6 +77,7 @@ export default function Register(props) {
             value={formik.values.repeatPassword}
             error={formik.errors.repeatPassword}
         />
+        
 
         <Button mode="contained" style={globalStyles.form.buttonSubmit} onPress={formik.handleSubmit} loading={formik.isSubmitting}> Registrarse </Button>
         <Button mode="text"      style={globalStyles.form.buttonText} onPress={cambioAuth}> Iniciar sesión </Button>
