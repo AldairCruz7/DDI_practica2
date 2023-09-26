@@ -10,16 +10,20 @@ import Hunter from '../../assets/Hunter.png';
 
 
 const AuthScreen = () => {
-  const [isLogin, setIsLogin] = useState();
+  const [isLogin, setIsLogin] = useState(true);
+
+  const cambioAuth = () => {
+    setIsLogin(!isLogin);
+  };
 
   return (
-    <View style = { styles.container}>
-       <Image style = { styles.image} source = {Hunter} />
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? "padding" : "height"}>
-          {isLogin ? <Login /> : <Register />}
-        </KeyboardAvoidingView>
+    <View style={styles.container}>
+      <Image style={styles.image} source={Hunter} />
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? "padding" : "height"}>
+        {isLogin ? <Login cambioAuth={cambioAuth} /> : <Register cambioAuth={cambioAuth} />}
+      </KeyboardAvoidingView>
     </View>
-  )
+  );
 }
 
 export default AuthScreen

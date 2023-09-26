@@ -7,7 +7,11 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { authApi } from '../../../api/Auth';
 
-export default function Register() {
+export default function Register(props) {
+
+  const {cambioAuth} = props
+
+  console.log("holalalala",props.isLogin);
 
   const formik = useFormik({
     initialValues: {
@@ -75,7 +79,7 @@ export default function Register() {
         />
 
         <Button mode="contained" style={globalStyles.form.buttonSubmit} onPress={formik.handleSubmit} loading={formik.isSubmitting}> Registrarse </Button>
-        <Button mode="text"      style={globalStyles.form.buttonText}> Iniciar sesión </Button>
+        <Button mode="text"      style={globalStyles.form.buttonText} onPress={cambioAuth}> Iniciar sesión </Button>
     </View>
   )
 }

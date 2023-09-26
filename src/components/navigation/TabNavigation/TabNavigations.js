@@ -30,16 +30,16 @@ const TabNavigations = () => {
         component={SettingsScreen}
         options={{title: 'Ajustes'}} />
 
-    <Tab.Screen 
+      <Tab.Screen 
         name="Favorites" 
         component={FavoritesScreen}
         options={{title: 'Favoritos'}} />
 
-    <Tab.Screen
+      <Tab.Screen
         name="Account"
         component={AccountScreen}
         options={{title: 'Cuenta'}}
-    />
+      />
 
     </Tab.Navigator>
 
