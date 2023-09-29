@@ -6,9 +6,20 @@ import { globalStyles } from '../../../../styles';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { authApi } from '../../../api/Auth';
+import Toast from 'react-native-root-toast';
+import { useAuth } from '../../../Hooks/UseAuth';
+
+
+
 
 export default function Login(props) {
- const {cambioAuth} = props
+ const {cambioAuth} = props;
+ const {login} = useAuth();
+
+
+  const useAuthData = useAuth();
+  console.log("soy useAuthData",useAuthData)
+
   const formik = useFormik({
     initialValues: {
       username: '',
@@ -24,10 +35,16 @@ export default function Login(props) {
       const { email, password } = formData;
       try {
         const response = await authApi.Login(email,password);
-        console.log("response", response)
+        login(response.jwt);
+        Toast.show("Bienvenido bb", {
+          position: Toast.positions.CENTER,
+        });
         
       }catch(error){
-        console.log(error);
+          
+          Toast.show("Usuario o contraseña incorrectos", {
+            position: Toast.positions.CENTER,
+          });
       }
     }
 

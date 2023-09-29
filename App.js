@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import RootNavigation from './src/components/navigation/RootNavigation';
 import { useFonts, Montserrat_300Light, Montserrat_700Bold, Montserrat_400Regular } from '@expo-google-fonts/montserrat'; 
 import { MD3LightTheme as DefaultTheme, PaperProvider } from 'react-native-paper';
+import { AuthProvider } from './src/context/AuthContext';
 
 const theme = {
   ...DefaultTheme,
@@ -26,9 +27,11 @@ export default function App() {
   }
 
   return (
-    <PaperProvider theme={theme}>
-       <RootNavigation />
-    </PaperProvider>
+    <AuthProvider>
+      <PaperProvider theme={theme}>
+        <RootNavigation />
+      </PaperProvider>
+    </AuthProvider>
   );
 }
 

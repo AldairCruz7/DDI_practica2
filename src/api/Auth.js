@@ -31,6 +31,7 @@ async function Login(identifier, password){
     }
     console.log("soy params",params.body)
     const response = await fetch(url, params);
+    console.log("soy response",JSON.stringify(response.response))
     if (response.status !== 200) throw response;
     return await response.json();
   }
