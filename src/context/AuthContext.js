@@ -6,6 +6,15 @@ export const AuthContext = createContext();
 export const AuthProvider = (props) =>{
     const {children} = props;
 
+
+    useEffect(() => {
+        getSession();
+    }, [])
+
+    const getSession = async () =>{
+        const token = await storageController.getToken();
+        console.log("Token",token)
+    }
     const login = async (token)=>{
         try{
             console.log("obteniendo token",token)

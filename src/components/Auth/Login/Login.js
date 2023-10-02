@@ -8,6 +8,7 @@ import * as Yup from 'yup';
 import { authApi } from '../../../api/Auth';
 import Toast from 'react-native-root-toast';
 import { useAuth } from '../../../Hooks/UseAuth';
+import { userController } from '../../../api/Users';
 
 
 
@@ -17,8 +18,8 @@ export default function Login(props) {
  const {login} = useAuth();
 
 
+
   const useAuthData = useAuth();
-  console.log("soy useAuthData",useAuthData)
 
   const formik = useFormik({
     initialValues: {
@@ -39,7 +40,8 @@ export default function Login(props) {
         Toast.show("Bienvenido bb", {
           position: Toast.positions.CENTER,
         });
-        
+          
+        console.log("soy login------------------->",await userController.getMe())
       }catch(error){
           
           Toast.show("Usuario o contraseña incorrectos", {
