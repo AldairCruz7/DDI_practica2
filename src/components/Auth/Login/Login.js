@@ -25,7 +25,6 @@ export default function Login(props) {
     initialValues: {
       username: '',
       password: '',
-     
     },
     validationSchema: Yup.object({
       email: Yup.string().email(true).required(true),
@@ -37,11 +36,11 @@ export default function Login(props) {
       try {
         const response = await authApi.Login(email,password);
         login(response.jwt);
-        Toast.show("Bienvenido bb", {
-          position: Toast.positions.CENTER,
-        });
+          Toast.show("Bienvenido bb", {
+            position: Toast.positions.CENTER,
+          });
           
-        console.log("soy login------------------->",await userController.getMe())
+        console.log("userController.getMe------------------->",await userController.getMe())
       }catch(error){
           
           Toast.show("Usuario o contraseña incorrectos", {
