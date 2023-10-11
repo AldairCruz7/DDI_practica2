@@ -16,6 +16,7 @@ import iconPepenillorick from '../../../assets/iconPepenillorick.png';
 
 const TabNavigations = () => {
   const Tab = createBottomTabNavigator();
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -34,11 +35,9 @@ const TabNavigations = () => {
         options={{title: 'Personajes' , tabBarLabel: ''}}
         />
 
-        {/* <Tab.Screen 
-        name="Settings" 
-        component={SettingsScreen}
-        options={{title: 'Ajustes'}} />
+     
 
+      {/*
       <Tab.Screen 
         name="Favorites" 
         component={FavoritesScreen}
@@ -71,13 +70,13 @@ const setIcon = (route, routeStatus) => {
   }
 
   if (route.name === 'Home') {
-    return <Image source={portal} style={{width: 60, height: 60, }} />;
+    iconName = 'home';
   } else if (route.name === 'Settings') {
     iconName = 'cog';
   } else if (route.name === 'Favorites') {
     iconName = 'heart';
   } else if (route.name === 'Account') {
-    return <Image source={iconPepenillorick} style={{width: 60, height: 70, marginBottom:10 }} />;
+    iconName = 'heart';
   } else if (route.name === 'Personajes') {
     // Usar el componente Image con tu imagen personalizada
     return <Image source={iconRick} style={{width: 70, height: 100, marginBottom:30}} />;
