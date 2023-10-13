@@ -17,11 +17,11 @@ const AppNavigation = () => {
             options={{headerShown: false}}
             />
 
-        <Stack.Screen
-            name="InfoRM"
-            component={InfoRM}
-            options={{headerShown: true, title: 'Información'}}
-            />
+          <Stack.Screen
+              name="InfoRM"
+              component={InfoRM}
+              options={{headerShown: true, title: 'Información'}}
+          />
             
         </Stack.Navigator>
     </NavigationContainer>

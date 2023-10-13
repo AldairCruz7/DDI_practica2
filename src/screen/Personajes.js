@@ -7,10 +7,10 @@ export default function Personajes() {
   return (
     <View >
          <ImageBackground
-        source={require('../assets/space.jpg')}
-      >
+            source={require('../assets/space.jpg')}
+         >
         <Rm/>
         </ImageBackground>
     </View>
   )
-}
+}ñ

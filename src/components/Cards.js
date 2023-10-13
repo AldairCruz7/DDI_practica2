@@ -10,12 +10,13 @@ export default function Cards(props) {
       props.navigation.navigate('InfoRM', { characters })
     }
   return (
-    <TouchableOpacity onPress={goToPersonaje} style={{alignItems:'center', alignContent:'space-between', padding:15, marginBottom: 30}}>
+    <TouchableOpacity onPress={goToPersonaje} >
         
 
       <Card.Title
+          
+          titleStyle={{color: 'white', paddingLeft:20}}
           title={characters.name}
-          subtitle="Card Subtitle"
           left={(props) =><Avatar.Image  source={{ uri: characters.image }}/>}
           right={(props) => <IconButton {...props} icon="dots-vertical" onPress={() => {}} />}
         />
